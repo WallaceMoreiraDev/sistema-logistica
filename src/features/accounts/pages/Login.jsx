@@ -4,7 +4,7 @@ import { useLogin } from '../hooks/useLogin';
 
 export function Login() {
 
-    const { email, setEmail, password, setPassword } = useLogin('');
+    const { email, setEmail, password, setPassword, login } = useLogin('');
 
     return (
         <div className="login-container">
@@ -28,7 +28,8 @@ export function Login() {
                     </div>
 
                     <form className="login-form" onSubmit={(e) => {
-                        e.preventDefault()
+                        e.preventDefault();
+                        login();
                     }}>
                         <div className="input-group">
                             <label htmlFor="email">Email corporativo</label>

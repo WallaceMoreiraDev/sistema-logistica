@@ -1,0 +1,114 @@
+.feedback-toast {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  min-width: 320px;
+  max-width: 450px;
+  z-index: 9999;
+  animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  font-family: 'Inter', sans-serif;
+  border-left: 6px solid;
+}
+
+/* Variantes de estado */
+.feedback-success {
+  border-left-color: #10b981;
+}
+
+.feedback-success .feedback-icon {
+  color: #10b981;
+  background-color: #d1fae5;
+}
+
+.feedback-error {
+  border-left-color: #ef4444;
+}
+
+.feedback-error .feedback-icon {
+  color: #ef4444;
+  background-color: #fee2e2;
+}
+
+/* Ícone */
+.feedback-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.feedback-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Conteúdo */
+.feedback-content {
+  flex: 1;
+}
+
+.feedback-message {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #1e293b;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Botão de Fechar */
+.feedback-close {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  margin-left: -8px;
+}
+
+.feedback-close:hover {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+.feedback-close svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Animação */
+@keyframes slideIn {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsividade para mobile */
+@media (max-width: 600px) {
+  .feedback-toast {
+    top: 20px;
+    right: 20px;
+    left: 20px;
+    min-width: auto;
+    width: auto;
+  }
+}
