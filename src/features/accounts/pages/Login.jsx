@@ -1,10 +1,10 @@
 import '../style.css';
-import { useState } from 'react';
+import { Feedback } from '../../../components/Feedback';
 import { useLogin } from '../hooks/useLogin';
 
 export function Login() {
 
-    const { email, setEmail, password, setPassword, login } = useLogin('');
+    const { email, setEmail, password, setPassword, login, feedback } = useLogin();
 
     return (
         <div className="login-container">
@@ -31,6 +31,9 @@ export function Login() {
                         e.preventDefault();
                         login();
                     }}>
+
+                        {feedback.info ? (<Feedback feedback={feedback} />) : null}
+
                         <div className="input-group">
                             <label htmlFor="email">Email corporativo</label>
                             <div className="input-wrapper">
@@ -51,14 +54,6 @@ export function Login() {
                             </div>
                         </div>
 
-                        <div className="form-actions">
-                            <label className="remember-me">
-                                <input type="checkbox" />
-                                <span>Lembrar de mim</span>
-                            </label>
-                            <a href="#" className="forgot-password">Esqueceu a senha?</a>
-                        </div>
-
                         <button type="submit" className="login-button">
                             Entrar no sistema
                             <svg xmlns="http://www.w3.org/2000/svg" className="btn-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,10 +61,6 @@ export function Login() {
                             </svg>
                         </button>
                     </form>
-
-                    <div className="login-footer">
-                        <p>Precisa de ajuda? <a href="#">Contate o departamento de TI</a></p>
-                    </div>
                 </div>
             </div>
         </div>

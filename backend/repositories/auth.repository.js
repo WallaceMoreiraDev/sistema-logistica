@@ -2,9 +2,9 @@
 
 const fakeUsers = [
     {
-        id: 'kk34j2klj34j26',
+        id: 'h3425hj4bjj2b5kh34534',
         email: 'wallace.msilva0805@gmail.com',
-        password: 'wallace36912',
+        password: '$2b$10$Q7N6oqGo8MC/xnVEAxR5cufoAJseQLEtX3Gu5JXl4clizAG8iXnn6',
         type: 'admin'
     },
     {
